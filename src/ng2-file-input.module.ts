@@ -1,11 +1,12 @@
 import { FileInputHandlerService } from './file-input-handler.service';
 import { Ng2FileInputService } from './ng2-file-input.service';
-import { NgModule, ModuleWithProviders, OpaqueToken } from '@angular/core';
+import { NgModule, ModuleWithProviders, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Ng2FileInputComponent } from './ng2-file-input.component';
-import { Ng2FileInputOptionsInterface, Ng2FileInputOptions } from './ng2-file-input.interface';
+import { Ng2FileInputOptionsInterface } from './ng2-file-input-options.interface';
+import { Ng2FileInputOptions } from './ng2-file-input-options.class';
 
-export const USER_OPTIONS: OpaqueToken = new OpaqueToken('ng2 file input custom user options');
+export const USER_OPTIONS: InjectionToken<string> = new InjectionToken('ng2 file input custom user options');
 
 export function optionsFactory(userOptions: Ng2FileInputOptions): Ng2FileInputOptions {
   const options: Ng2FileInputOptions = new Ng2FileInputOptions();
@@ -15,7 +16,7 @@ export function optionsFactory(userOptions: Ng2FileInputOptions): Ng2FileInputOp
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule
   ],
   providers: [Ng2FileInputService, FileInputHandlerService],
   declarations: [Ng2FileInputComponent],

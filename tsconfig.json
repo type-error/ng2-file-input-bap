@@ -12,8 +12,7 @@
     "skipLibCheck": true,
     "paths": {
       "@angular/platform-browser": ["node_modules/@angular/platform-browser"],
-      "@angular/core": ["node_modules/@angular/core"],
-      "bergben-angular2-file-drop": ["node_modules/bergben-angular2-file-drop"]
+      "@angular/core": ["node_modules/@angular/core"]
     },
     "lib": [
       "es2015", 
